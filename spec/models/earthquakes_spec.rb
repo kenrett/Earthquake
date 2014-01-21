@@ -26,6 +26,13 @@ describe Earthquake do
     end
   end
 
+  describe '.near(lat, long)' do
+    it 'should return earthquakes within 5 miles' do
+      pending
+      Earthquake.unscoped.near(19.4688, -155.9172).to_sql.should 
+    end
+  end
+
 end
 
 
