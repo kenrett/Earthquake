@@ -10,11 +10,12 @@ class EarthquakesController < ApplicationController
     scope = scope.mag_over(params[:over]) if params[:over]
     if params[:near]
       latlong = params[:near].split(",")
-      lat = latlong.split(",")[0]
-      long = latlong.split(",")[1]
-      scope = scope.near(lat, long)
-    end
     # binding.pry
+      # puts lat = latlong[0].to_f
+      # puts lat.class
+      # puts lng = latlong[1].to_f
+      scope = scope.near(lat, lng)
+    end
 
     respond_to do |format|
       format.json { render json: scope }

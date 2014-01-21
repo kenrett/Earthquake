@@ -28,12 +28,8 @@ describe Earthquake do
 
   describe '.near(lat, long)' do
     it 'should return earthquakes within 5 miles' do
-      pending
+      pending # would love to learn how to test this!
       Earthquake.unscoped.near(19.4688, -155.9172).to_sql.should 
     end
   end
-
-end
-
-
 end
