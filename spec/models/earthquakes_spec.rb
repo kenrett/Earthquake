@@ -5,6 +5,7 @@ describe Earthquake do
     it 'should only show last 7 days data' do
       Earthquake.all.to_sql.should match(/quake_date['"]? >= '?#{7.days.ago.to_date}/)
     end
+  end
 
   describe '.on_day(date)' do
     it 'should select only those where quake_date lies within date given' do
