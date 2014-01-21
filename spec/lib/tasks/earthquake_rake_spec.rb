@@ -2,29 +2,29 @@ require 'spec_helper'
 require 'csv'
 require 'rake'
 
-describe 'get_earthquakes' do
+describe 'rake get_earthquakes' do
 
   before :all do
-    Rake.application = Rake::Application.new
-    Rake.application.rake_require "tasks/get_earthquakes"
+    # Rake.application.rake_require "tasks/get_earthquakes"
     Rake::Task.define_task(:environment)
   end
 
   let :run_rake_task do
-    Rake::Task["get_earthquakes"].reenable
-    Rake.application.invoke_task("get_earthquakes")
+    # binding.pry
+    Rake::Task.define_task("now:get_earthquakes")
+    Rake::Task["now:get_earthquakes"].reenable
+    Rake::Task["now:get_earthquakes"].invoke
   end
 
   it 'creates an earthquake' do
 
-    # binding.pry
-    row = mock_csv_row
+    row = pre_conversion_row
     CSV.stub(:foreach).and_yield row
 
-    earthquake.create(mock_csv_row) #need to create an earthquake somehow....?!
-
+    # binding.pry
     run_rake_task
-
+    # binding.pry
+    puts Earthquake.all.count
     quake = Earthquake.first
 
     puts quake.quake_id
@@ -35,10 +35,51 @@ describe 'get_earthquakes' do
     # expect(quake.magtype).to eq row[:magtype]
     # expect(quake.updated).to eq row[:updated]
   end
+
+  describe 'when change_names(row) is called' do
+    it 'changes the name of the keys' do
+
+      row = converted_row
+      CSV.stub(:foreach).and_yield row
+
+      puts Earthquake.all.count
+      quake = Earthquake.first
+      expect(quake[:quake_id]).to eq('nc12345678')
+      expect(quake[:quake_date]).to eq(Date.parse('2014-01-01 00:12:34'))
+      expect(quake[:latitude]).to eq(12.3456)
+      expect(quake[:longitude]).to eq(-123.456)
+      expect(quake[:depth]).to eq(1.2)
+      expect(quake[:nst]).to eq(1)
+      expect(quake[:region]).to eq("5km W of Walnut Creek, CA")
+    end
+  end
 end
 
-def mock_csv_row
+def converted_row
   row = {
-    quake_id: 'nc12345678', latitude: 12.3456, longitude: -123.456, depth: 1.2, mag: 1.2, magtype: "Md", nst: 1, gap: 12, dmin: 1, rms: 1, net: "nc", quake_date: DateTime.new('2014-01-01 00:12:34'), updated: DateTime.new('2014-01-01 00:23:34'), place: "5km W of Walnut Creek, CA"
+    quake_id: 'nc12345678', latitude: 12.3456, longitude: -123.456, depth: 1.2, mag: 1.2, magtype: "Md", nst: 1, gap: 12, dmin: 1, rms: 1, net: "nc", quake_date: Date.parse('2014-01-01 00:12:34'), updated: Date.parse('2014-01-01 00:23:34'), place: "5km W of Walnut Creek, CA"
+  }
+end
+
+def pre_conversion_row
+  row = { id: "nc12345678", latitude: "12.3456", longitude: "-123.456", depth: "1.2", mag: "1.2", magtype: "Md", nst: "1", gap: "12", dmin: "1", rms: "1", net: "nc", time: '2014-01-01 00:12:34', updated: '2014-01-01 00:23:34', place: "5km W of Walnut Creek, CA" }
+end
+
+def change_names(row)
+  {
+    quake_date: row[:time],
+    latitude: row[:latitude],
+    longitude: row[:longitude],
+    depth: row[:depth],
+    mag: row[:mag],
+    magtype: row[:magtype],
+    nst: row[:nst],
+    gap: row[:gap],
+    dmin: row[:dmin],
+    rms: row[:rms],
+    net: row[:net],
+    quake_id: row[:id],
+    updated: row[:updated],
+    place: row[:place]
   }
 end

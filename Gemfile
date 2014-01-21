@@ -8,6 +8,7 @@ gem 'pry-rails'
 
 gem 'protected_attributes'
 gem 'active_model_serializers'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'rspec-rails'
