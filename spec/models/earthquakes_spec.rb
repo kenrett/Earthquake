@@ -9,7 +9,7 @@ describe Earthquake do
   describe '.on_day(date)' do
     it 'should select only those where quake_date lies within date given' do
       today = Date.today
-      Earthquake.unscoped.on_day(today).to_sql.should match(/date\(.*quake_date.*\) = '#{today.to_s(:db)}'/)
+       Earthquake.unscoped.on_day(today).to_sql.should match(/date\(.*quake_date.*\) = '#{today.to_s(:db)}'/)
     end
   end 
 

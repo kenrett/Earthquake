@@ -5,8 +5,8 @@ class EarthquakesController < ApplicationController
   def index
     scope = Earthquake.all_quakes
 
-    scope = scope.on_day(Time.zone.at(params[:on].to_i).to_date) if params[:on]
     scope = scope.since_quake(Time.zone.at(params[:since].to_i).to_date) if params[:since]
+    scope = scope.on_day(Time.zone.at(params[:on].to_i).to_date) if params[:on]
     # binding.pry
 
     respond_to do |format|
