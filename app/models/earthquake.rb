@@ -8,4 +8,5 @@ class Earthquake < ActiveRecord::Base
   scope :all_quakes, -> { select(ALL_EARTHQUAKES) }
   scope :on_day, -> (date) { where Arel::Nodes::NamedFunction.new(:date, [arel_table[:quake_date]]).eq(date) }
   scope :since_quake, -> (time) { where arel_table[:quake_date].gt(time) }
+  scope :mag_over, -> (mag) { where arel_table[:mag].gt(mag) }
 end

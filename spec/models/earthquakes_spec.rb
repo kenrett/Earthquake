@@ -20,6 +20,12 @@ describe Earthquake do
     end
   end
 
+  describe '.mag_over(float)' do
+    it 'should select only quakes over magnitude given' do
+      Earthquake.unscoped.mag_over(3.4).to_sql.should match(/mag['"]? > ? 3.4/)
+    end
+  end
+
 end
 
 
