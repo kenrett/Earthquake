@@ -1,12 +1,16 @@
 class EarthquakesController < ApplicationController
   include ActionController::MimeResponds
 
+
   def index
-    @earthquakes = Earthquake.all
+    scope = Earthquake.all_quakes
+
+    scope = scope.on_day(Time.zone.at(params[:on].to_i).to_date) if params[:on]
+    scope = scope.since_quake(Time.zone.at(params[:since].to_i).to_date) if params[:since]
     # binding.pry
 
     respond_to do |format|
-      format.json { render json: @earthquakes }
+      format.json { render json: scope }
     end
   end
 
