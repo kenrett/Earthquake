@@ -1,5 +1,5 @@
 every :minute do 
-  runner "Earthquake."
+  # runner "Earthquake."
   rake "now:get_earthquakes"
 end
 
