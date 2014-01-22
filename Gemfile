@@ -18,6 +18,7 @@ end
 group :test do
   gem 'ffaker'
   gem 'webmock'
+  gem 'database_cleaner'
 end
 
 

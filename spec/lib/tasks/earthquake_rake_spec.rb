@@ -24,15 +24,15 @@ describe 'rake get_earthquakes' do
     # binding.pry
     run_rake_task
     # binding.pry
-    FactoryGirl.create(:earthquake)
+    quake = FactoryGirl.create(:earthquake)
 
     puts quake.quake_id
-    # expect(quake.quake_id).to eq row[:quake_id]
-    # expect(quake.latitude).to eq row[:latitude]
-    # expect(quake.longitude).to eq row[:longitude]
-    # expect(quake.depth).to eq row[:depth]
-    # expect(quake.magtype).to eq row[:magtype]
-    # expect(quake.updated).to eq row[:updated]
+    expect(quake.quake_id).to eq row[:quake_id]
+    expect(quake.latitude).to eq row[:latitude]
+    expect(quake.longitude).to eq row[:longitude]
+    expect(quake.depth).to eq row[:depth]
+    expect(quake.magtype).to eq row[:magtype]
+    expect(quake.updated).to eq row[:updated]
   end
 
   describe 'when change_names(row) is called' do
@@ -42,15 +42,15 @@ describe 'rake get_earthquakes' do
       CSV.stub(:foreach).and_yield row
 
       
-      let(:quake) = { FactoryGirl.create(:earthquake) }
+      # let(:quake) = { FactoryGirl.create(:earthquake) }
       
-      expect(quake[:quake_id]).to eq('MZKXSCCG')
-      expect(quake[:quake_date]).to eq(Date.parse('2014-01-01 00:12:34'))
-      expect(quake[:latitude]).to eq(12.3456)
-      expect(quake[:longitude]).to eq(-123.456)
-      expect(quake[:depth]).to eq(1.2)
-      expect(quake[:nst]).to eq(1)
-      expect(quake[:region]).to eq("5km W of Walnut Creek, CA")
+      # expect(quake[:quake_id]).to eq('MZKXSCCG')
+      # expect(quake[:quake_date]).to eq(Date.parse('2014-01-01 00:12:34'))
+      # expect(quake[:latitude]).to eq(12.3456)
+      # expect(quake[:longitude]).to eq(-123.456)
+      # expect(quake[:depth]).to eq(1.2)
+      # expect(quake[:nst]).to eq(1)
+      # expect(quake[:region]).to eq("5km W of Walnut Creek, CA")
     end
   end
 end

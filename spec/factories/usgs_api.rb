@@ -1,3 +1,5 @@
+example_data = { quake_id: 'nc12345678', latitude: 12.3456, longitude: -123.456, depth: 1.2, mag: 1.2, magtype: "Md", nst: 1, gap: 12, dmin: 1, rms: 1, net: "nc", quake_date: Date.parse('2014-01-01 00:12:34'), updated: Date.parse('2014-01-01 00:23:34'), place: "5km W of Walnut Creek, CA" }
+
 require 'webmock'
 include WebMock::API
 
@@ -8,7 +10,7 @@ FactoryGirl.define do
 
     ignore do
       data_url "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.csv"
-      data { quake_id: 'nc12345678', latitude: 12.3456, longitude: -123.456, depth: 1.2, mag: 1.2, magtype: "Md", nst: 1, gap: 12, dmin: 1, rms: 1, net: "nc", quake_date: Date.parse('2014-01-01 00:12:34'), updated: Date.parse('2014-01-01 00:23:34'), place: "5km W of Walnut Creek, CA" }
+      data example_data
     end
 
     initialize_with do
