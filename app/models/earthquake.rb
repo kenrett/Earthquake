@@ -6,9 +6,8 @@ class Earthquake < ActiveRecord::Base
   validates :quake_id, uniqueness: true
   validates :latitude, presence: true
   validates :longitude, presence: true
+  validates :quake_date, presence: true
   validates :mag, presence: true
-  validates :nst, presence: true
-  validates :depth, presence: true
 
   default_scope -> { where arel_table[:quake_date].gteq(7.days.ago) }
   

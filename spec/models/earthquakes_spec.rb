@@ -4,13 +4,12 @@ describe Earthquake do
     
   describe 'validations' do
   quake = FactoryGirl.build(:earthquake)
-    binding.pry
+
     it { should validate_uniqueness_of :quake_id }
     it { should validate_presence_of :latitude }
     it { should validate_presence_of :longitude }
     it { should validate_presence_of :mag }
-    it { should validate_presence_of :nst }
-    it { should validate_presence_of :depth }
+    it { should validate_presence_of :quake_date }
   end
 
   describe 'default scope' do
