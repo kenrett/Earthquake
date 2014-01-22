@@ -33,13 +33,13 @@ RSpec.configure do |config|
   #   DatabaseCleaner.clean_with(:truncation)
   # end
 
-  # config.before(:each) do
-  #   DatabaseCleaner.start
-  # end
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
 
-  # config.after(:each) do
-  #   DatabaseCleaner.clean
-  # end
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 
   config.alias_it_should_behave_like_to :it_responds_with, 'responds with'
 
