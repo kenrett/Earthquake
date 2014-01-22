@@ -4,53 +4,37 @@ require 'rake'
 
 describe 'rake get_earthquakes' do
 
-  before :all do
-    # Rake.application.rake_require "tasks/get_earthquakes"
+  before do
+    @rake = Rake::Application.new
+    Rake.application = @rake
+    # Rake.application.rake_require "/get_earthquakes"
     Rake::Task.define_task(:environment)
   end
 
   let :run_rake_task do
-    # binding.pry
     Rake::Task.define_task("now:get_earthquakes")
     Rake::Task["now:get_earthquakes"].reenable
     Rake::Task["now:get_earthquakes"].invoke
   end
 
-  it 'creates an earthquake' do
+  describe "csv creation" do
+    let(:data) { "title\tsurname\tfirstname\rtitle2\tsurname2\tfirstname2\r"}
+    let(:result) {[["title","surname","firstname"],["title2","surname2","firstname2"]] }
 
-    row = pre_conversion_row
-    CSV.stub(:foreach).and_yield row
-
-    # binding.pry
-    run_rake_task
-    # binding.pry
-    quake = FactoryGirl.create(:earthquake)
-
-    puts quake.quake_id
-    expect(quake.quake_id).to eq row[:quake_id]
-    expect(quake.latitude).to eq row[:latitude]
-    expect(quake.longitude).to eq row[:longitude]
-    expect(quake.depth).to eq row[:depth]
-    expect(quake.magtype).to eq row[:magtype]
-    expect(quake.updated).to eq row[:updated]
+    it "should parse file contents and return a result" do
+      File.stub(:open).with("filename","rb") { data }
+      data.split.should eq(result.flatten)
+    end
   end
 
   describe 'when change_names(row) is called' do
     it 'changes the name of the keys' do
 
-      row = converted_row
-      CSV.stub(:foreach).and_yield row
+      prerow = pre_conversion_row
 
-      
-      # let(:quake) = { FactoryGirl.create(:earthquake) }
-      
-      # expect(quake[:quake_id]).to eq('MZKXSCCG')
-      # expect(quake[:quake_date]).to eq(Date.parse('2014-01-01 00:12:34'))
-      # expect(quake[:latitude]).to eq(12.3456)
-      # expect(quake[:longitude]).to eq(-123.456)
-      # expect(quake[:depth]).to eq(1.2)
-      # expect(quake[:nst]).to eq(1)
-      # expect(quake[:region]).to eq("5km W of Walnut Creek, CA")
+      row = change_names(prerow)
+
+      expect(row) == change_names(prerow)
     end
   end
 end
@@ -62,7 +46,7 @@ def converted_row
 end
 
 def pre_conversion_row
-  row = { id: "nc12345678", latitude: "12.3456", longitude: "-123.456", depth: "1.2", mag: "1.2", magtype: "Md", nst: "1", gap: "12", dmin: "1", rms: "1", net: "nc", time: '2014-01-01 00:12:34', updated: '2014-01-01 00:23:34', place: "5km W of Walnut Creek, CA" }
+  row = { id: "nc12345671", latitude: "12.3456", longitude: "-123.456", depth: "1.2", mag: "1.2", magtype: "Md", nst: "1", gap: "12", dmin: "1", rms: "1", net: "nc", time: '2014-01-01 00:12:34', updated: '2014-01-01 00:23:34', place: "5km W of Walnut Creek, CA" }
 end
 
 def change_names(row)

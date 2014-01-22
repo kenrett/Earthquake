@@ -1,8 +1,6 @@
 require 'csv'
 require 'net/http'
 
-# puts 'here I am!'
-
 desc 'Get Earthquake CSV'
 
 namespace :now do
@@ -37,7 +35,6 @@ namespace :now do
           place: row[:place]
         }
       end
-      puts "HERE!"
     Earthquake.find_or_create_by_quake_id(change_names(row)) 
     puts "There are now #{Earthquake.all.count} earthquakes."
     end
