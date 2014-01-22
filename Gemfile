@@ -13,6 +13,7 @@ gem 'rails_12factor', group: :production
 gem 'protected_attributes'
 gem 'active_model_serializers'
 gem 'whenever', :require => false
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'rspec-rails'

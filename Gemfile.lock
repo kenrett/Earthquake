@@ -54,6 +54,7 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.8.4)
+    newrelic_rpm (3.7.1.188)
     pg (0.17.1)
     polyglot (0.3.3)
     protected_attributes (1.0.5)
@@ -146,6 +147,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   ffaker
+  newrelic_rpm
   pg
   protected_attributes
   pry-rails
