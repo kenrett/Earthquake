@@ -6,7 +6,7 @@ This is an app which provides a JSON API of worldwide earthquakes in the past 7 
 
 This API is read-only which responds to GET requests.
 
-- With no params, return all earthquakes in the past 7 days.
+With no params, return all earthquakes in the past 7 days.
 
 
 It accepts the following optional parameters:
