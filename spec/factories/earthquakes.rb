@@ -6,7 +6,7 @@ FactoryGirl.define do
     latitude { Faker::Geolocation.lat }
     longitude { Faker::Geolocation.lng }
     depth { (rand * 300).round(1) }
-    mag { rand(1...8).to_f }
+    mag { rand(1...8) }
     magtype { 'za' }
     nst { rand(200) }
     gap { rand(200) }

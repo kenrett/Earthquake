@@ -3,14 +3,14 @@ require 'spec_helper'
 describe Earthquake do
     
   describe 'validations' do
-    subject { FactoryGirl.build(:earthquake) }
-
-    it { should.validate_uniqueness_of :quake_id }
-    it { should.validate_numericality_of :latitude }
-    it { should.validate_numericality_of :longitude }
-    it { should.validate_numericality_of :mag }
-    it { should.validate_numericality_of :nst }
-    it { should.validate_numericality_of :depth }
+  let(:existing) { FactoryGirl.create(:earthquake) }
+    # binding.pry
+    it { should validate_uniqueness_of :quake_id }
+    it { should validate_presence_of :latitude }
+    it { should validate_presence_of :longitude }
+    it { should validate_presence_of :mag }
+    it { should validate_presence_of :nst }
+    it { should validate_presence_of :depth }
   end
 
   describe 'default scope' do

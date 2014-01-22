@@ -11,9 +11,9 @@ class EarthquakesController < ApplicationController
     if params[:near]
       latlong = params[:near].split(",")
     # binding.pry
-      # puts lat = latlong[0].to_f
+      lat = latlong[0].to_f
       # puts lat.class
-      # puts lng = latlong[1].to_f
+      lng = latlong[1].to_f
       scope = scope.near(lat, lng)
     end
 

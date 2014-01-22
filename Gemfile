@@ -19,6 +19,7 @@ group :test do
   gem 'ffaker'
   gem 'webmock'
   gem 'database_cleaner'
+  gem 'shoulda'
 end
 
 

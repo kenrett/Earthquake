@@ -7,7 +7,7 @@ describe "Earthquakes" do
   describe "get /earthquakes.json" do
 
     context 'with no params' do
-
+      pending
       # expect(response).to be_success
       # expect(json['content']).to 
       # expect(json['private_attr']).to eq(nil)
