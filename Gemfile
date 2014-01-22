@@ -17,6 +17,7 @@ end
 
 group :test do
   gem 'ffaker'
+  gem 'webmock'
 end
 
 
