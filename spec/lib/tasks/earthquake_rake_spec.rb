@@ -24,8 +24,7 @@ describe 'rake get_earthquakes' do
     # binding.pry
     run_rake_task
     # binding.pry
-    puts Earthquake.all.count
-    quake = Earthquake.first
+    FactoryGirl.create(:earthquake)
 
     puts quake.quake_id
     # expect(quake.quake_id).to eq row[:quake_id]
@@ -42,9 +41,10 @@ describe 'rake get_earthquakes' do
       row = converted_row
       CSV.stub(:foreach).and_yield row
 
-      puts Earthquake.all.count
-      quake = Earthquake.first
-      expect(quake[:quake_id]).to eq('nc12345678')
+      
+      let(:quake) = { FactoryGirl.create(:earthquake) }
+      
+      expect(quake[:quake_id]).to eq('MZKXSCCG')
       expect(quake[:quake_date]).to eq(Date.parse('2014-01-01 00:12:34'))
       expect(quake[:latitude]).to eq(12.3456)
       expect(quake[:longitude]).to eq(-123.456)

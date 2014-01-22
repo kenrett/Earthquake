@@ -3,11 +3,12 @@ class Earthquake < ActiveRecord::Base
 
   ALL_EARTHQUAKES = :quake_id, :latitude, :longitude,:depth, :mag, :magtype, :nst, :gap, :dmin, :rms, :net, :quake_date, :updated, :place
 
-  # validates :latitude, numericality: true
-  # validates :longitude, numericality: true
-  # validates :mag, numericality: true
-  # validates :nst, numericality: true
-  # validates :depth, numericality: true
+  validates :quake_id, uniqueness: true
+  validates :latitude, numericality: true
+  validates :longitude, numericality: true
+  validates :mag, numericality: true
+  validates :nst, numericality: true
+  validates :depth, numericality: true
 
   default_scope -> { where arel_table[:quake_date].gteq(7.days.ago) }
   

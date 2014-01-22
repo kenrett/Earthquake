@@ -36,6 +36,20 @@ CREATE EXTENSION IF NOT EXISTS cube WITH SCHEMA public;
 COMMENT ON EXTENSION cube IS 'data type for multidimensional cubes';
 
 
+--
+-- Name: earthdistance; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS earthdistance WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION earthdistance; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION earthdistance IS 'calculate great-circle distances on the surface of the Earth';
+
+
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
