@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Earthquakes2::Application.load_task
+Earthquakes2::Application.load_tasks
