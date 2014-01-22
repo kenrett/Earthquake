@@ -5,16 +5,16 @@ FactoryGirl.define do
     quake_date { Time.at rand(7.days.ago.to_i..DateTime.now.to_i) }
     latitude { Faker::Geolocation.lat }
     longitude { Faker::Geolocation.lng }
-    depth { (rand * 300).round(1) }
-    mag { rand(1...8) }
-    magtype { 'za' }
-    nst { rand(200) }
-    gap { rand(200) }
-    dmin { rand(200) }
-    rms { rand(200) }
-    net { rand(200) }
-    quake_id { (0...10).map { (65 + rand(26)).chr }.join }
+    sequence(:depth) { |i| "11#{i}" }
+    sequence(:mag) { |i| "#{rand(1...8)}.#{i}" }
+    magtype 'za'
+    sequence(:nst) { |i| "22#{i}" }
+    sequence(:gap) { |i| "33#{i}" }
+    sequence(:dmin) { |i| "44#{i}" }
+    sequence(:rms) { |i| "55#{i}" }
+    sequence(:net) { |i| "66#{i}" }
+    sequence(:quake_id) { |i| "nc1234567#{i}" }
     updated { Time.at rand(7.days.ago.to_i..DateTime.now.to_i) }
-    place { |num| "place #{num}" }
+    sequence(:place) { |i| "place #{i}" }
   end
 end

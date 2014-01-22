@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Earthquake do
     
   describe 'validations' do
-  let(:existing) { FactoryGirl.create(:earthquake) }
-    # binding.pry
+  quake = FactoryGirl.build(:earthquake)
+    binding.pry
     it { should validate_uniqueness_of :quake_id }
     it { should validate_presence_of :latitude }
     it { should validate_presence_of :longitude }
