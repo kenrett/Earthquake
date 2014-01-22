@@ -1,10 +1,14 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails', '4.0.2'
 gem 'rails-api'
 gem 'pg'
 
 gem 'pry-rails'
+
+gem 'rails_12factor', group: :production
 
 gem 'protected_attributes'
 gem 'active_model_serializers'
@@ -21,5 +25,7 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda'
 end
+
+gem 'unicorn'
 
 

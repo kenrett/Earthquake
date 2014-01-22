@@ -69,6 +69,10 @@ Earthquakes2::Application.configure do
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true
 
+  # ONLY doing this for Heroku -
+  # http://stackoverflow.com/questions/17300341/migrate-not-working-on-heroku
+  config.active_record.schema_format = :ruby
+
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
