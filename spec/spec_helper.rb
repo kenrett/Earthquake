@@ -46,3 +46,22 @@ RSpec.configure do |config|
 
   config.fail_fast = false
 end
+
+require 'vcr'
+require 'webmock/rspec'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/vcr'
+  c.hook_into :typhoeus
+  c.configure_rspec_metadata!
+  c.allow_http_connections_when_no_cassette = false
+end
+
+RSpec.configure do |c|
+  c.around(:each) do |example|
+    VCR.use_cassette(example.metadata[:full_description]) do
+      example.run
+    end
+  end
+end
+
