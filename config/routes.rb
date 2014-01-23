@@ -1,5 +1,4 @@
 Earthquakes2::Application.routes.draw do
-  
-  # NEED TO FIX THIS FOR HEROKU
+  # root to: 'earthquakes#index', :as => "earthquake"
   resources :earthquakes, :only => :index
 end
