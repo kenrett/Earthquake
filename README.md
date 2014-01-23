@@ -4,7 +4,7 @@ This is an app which provides a JSON API of worldwide earthquakes in the past 7 
 
 ## Setup
 
-Type "whenever -w" on the command line to automatically update the earthquakes every minute.
+Type "whenever -w" on the command line to start a worker that automatically update earthquakes every minute as well as clean out the old ones.
 
 ## API:
 
