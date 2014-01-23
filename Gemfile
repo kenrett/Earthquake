@@ -22,7 +22,7 @@ end
 
 group :test do
   gem 'ffaker'
-  gem 'typhoeus'
+  gem 'webmock'
   gem 'database_cleaner'
   gem 'shoulda'
   gem 'vcr'

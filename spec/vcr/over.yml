@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://desolate-escarpment-4897.herokuapp.com/earthquakes.json?over=3.2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Host:
+      - desolate-escarpment-4897.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 23 Jan 2014 20:55:30 GMT
+      Etag:
+      - '"a2f6e49bdd0d795dd82f9c0d0f79c379"'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.0.0/2013-11-22)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - d5ee50d3-aa5a-4ef3-8abf-80fbe6924975
+      X-Runtime:
+      - '0.014138'
+      X-Ua-Compatible:
+      - chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '5195'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"quake_id":"ak11141582","latitude":61.7767,"longitude":-149.9087,"depth":41.6,"mag":3.9,"magtype":"ml","nst":77,"gap":39,"dmin":0,"rms":0,"net":"ak","quake_date":"2014-01-21T14:57:04.000Z","updated":"2014-01-21T19:37:46.390Z","place":"7km
+        ENE of Willow, Alaska"},{"quake_id":"ak11141574","latitude":62.1662,"longitude":-150.5795,"depth":2.0,"mag":3.4,"magtype":"ml","nst":65,"gap":39,"dmin":0,"rms":0,"net":"ak","quake_date":"2014-01-21T14:29:19.000Z","updated":"2014-01-21T23:19:03.579Z","place":"30km
+        SW of Talkeetna, Alaska"},{"quake_id":"ak11141524","latitude":60.4695,"longitude":-147.3429,"depth":10.0,"mag":3.3,"magtype":"ml","nst":45,"gap":93,"dmin":0,"rms":0,"net":"ak","quake_date":"2014-01-21T12:02:31.000Z","updated":"2014-01-21T20:05:13.439Z","place":"80km
+        ESE of Whittier, Alaska"},{"quake_id":"ak11140700","latitude":62.8209,"longitude":-149.7897,"depth":71.9,"mag":3.6,"magtype":"ml","nst":84,"gap":50,"dmin":0,"rms":0,"net":"ak","quake_date":"2014-01-20T13:30:08.000Z","updated":"2014-01-20T19:54:00.509Z","place":"57km
+        NNE of Talkeetna, Alaska"},{"quake_id":"pr14020008","latitude":17.833,"longitude":-68.3151,"depth":99.0,"mag":3.4,"magtype":"Md","nst":6,"gap":334,"dmin":1,"rms":0,"net":"pr","quake_date":"2014-01-20T05:37:52.100Z","updated":"2014-01-20T19:48:00.351Z","place":"67km
+        SSE of Boca de Yuma, Dominican Republic"},{"quake_id":"pr14019036","latitude":18.2133,"longitude":-68.0556,"depth":100.0,"mag":3.3,"magtype":"Md","nst":16,"gap":208,"dmin":0,"rms":0,"net":"pr","quake_date":"2014-01-19T23:57:03.300Z","updated":"2014-01-20T07:59:41.597Z","place":"54km
+        SE of Punta Cana, Dominican Republic"},{"quake_id":"pr14019033","latitude":18.2593,"longitude":-68.8312,"depth":146.0,"mag":3.4,"magtype":"Md","nst":18,"gap":316,"dmin":0,"rms":0,"net":"pr","quake_date":"2014-01-19T19:54:34.400Z","updated":"2014-01-20T03:57:02.192Z","place":"23km
+        SE of La Romana, Dominican Republic"},{"quake_id":"pr14019034","latitude":17.7035,"longitude":-68.896,"depth":83.0,"mag":3.4,"magtype":"Md","nst":3,"gap":309,"dmin":0,"rms":0,"net":"pr","quake_date":"2014-01-19T18:14:44.900Z","updated":"2014-01-19T23:42:40.986Z","place":"80km
+        S of La Romana, Dominican Republic"},{"quake_id":"pr14019031","latitude":19.1224,"longitude":-66.6791,"depth":43.0,"mag":3.4,"magtype":"Md","nst":19,"gap":241,"dmin":0,"rms":0,"net":"pr","quake_date":"2014-01-19T17:57:57.500Z","updated":"2014-01-19T23:37:52.382Z","place":"71km
+        N of Carrizales, Puerto Rico"},{"quake_id":"pr14019030","latitude":19.1767,"longitude":-66.6729,"depth":35.0,"mag":3.3,"magtype":"Md","nst":20,"gap":244,"dmin":0,"rms":0,"net":"pr","quake_date":"2014-01-19T16:56:57.600Z","updated":"2014-01-19T19:22:24.000Z","place":"77km
+        N of Carrizales, Puerto Rico"},{"quake_id":"pr14019026","latitude":18.8351,"longitude":-64.2494,"depth":34.0,"mag":3.4,"magtype":"Md","nst":9,"gap":320,"dmin":0,"rms":0,"net":"pr","quake_date":"2014-01-19T13:27:49.400Z","updated":"2014-01-19T21:30:29.732Z","place":"60km
+        NE of Road Town, British Virgin Islands"},{"quake_id":"pr14019012","latitude":19.1492,"longitude":-66.6682,"depth":34.0,"mag":3.4,"magtype":"Md","nst":14,"gap":255,"dmin":0,"rms":0,"net":"pr","quake_date":"2014-01-19T10:11:21.600Z","updated":"2014-01-19T18:56:44.796Z","place":"74km
+        N of Carrizales, Puerto Rico"},{"quake_id":"pr14019008","latitude":19.0683,"longitude":-66.0416,"depth":52.0,"mag":3.3,"magtype":"Md","nst":18,"gap":234,"dmin":0,"rms":0,"net":"pr","quake_date":"2014-01-19T05:56:11.600Z","updated":"2014-01-19T13:58:39.915Z","place":"66km
+        N of San Juan, Puerto Rico"},{"quake_id":"ak11139019","latitude":50.7276,"longitude":179.594,"depth":47.7,"mag":3.3,"magtype":"ml","nst":5,"gap":349,"dmin":1,"rms":0,"net":"ak","quake_date":"2014-01-18T11:37:28.000Z","updated":"2014-01-22T02:13:49.465Z","place":"108km
+        WSW of Amatignak Island, Alaska"},{"quake_id":"ak11138865","latitude":50.9948,"longitude":179.1807,"depth":80.1,"mag":3.4,"magtype":"ml","nst":6,"gap":352,"dmin":1,"rms":0,"net":"ak","quake_date":"2014-01-18T07:06:29.000Z","updated":"2014-01-19T04:21:32.382Z","place":"110km
+        SSW of Semisopochnoi Island, Alaska"},{"quake_id":"ak11139511","latitude":51.5357,"longitude":-176.532,"depth":61.8,"mag":3.5,"magtype":"ml","nst":10,"gap":259,"dmin":0,"rms":0,"net":"ak","quake_date":"2014-01-18T06:48:09.000Z","updated":"2014-01-19T03:57:17.968Z","place":"39km
+        SSE of Adak, Alaska"},{"quake_id":"pr14017045","latitude":19.187,"longitude":-64.6679,"depth":52.0,"mag":3.3,"magtype":"Md","nst":5,"gap":288,"dmin":0,"rms":0,"net":"pr","quake_date":"2014-01-17T22:39:44.400Z","updated":"2014-01-18T07:01:54.131Z","place":"85km
+        N of Road Town, British Virgin Islands"},{"quake_id":"ak11141970","latitude":50.3997,"longitude":178.9882,"depth":20.0,"mag":3.3,"magtype":"ml","nst":8,"gap":345,"dmin":1,"rms":0,"net":"ak","quake_date":"2014-01-17T18:38:49.000Z","updated":"2014-01-21T21:25:51.725Z","place":"164km
+        SW of Amatignak Island, Alaska"},{"quake_id":"ak11141916","latitude":51.0645,"longitude":174.9686,"depth":20.0,"mag":3.7,"magtype":"ml","nst":12,"gap":262,"dmin":1,"rms":1,"net":"ak","quake_date":"2014-01-17T06:48:22.000Z","updated":"2014-01-21T21:27:05.769Z","place":"158km
+        SSW of Buldir Island, Alaska"}]'
+    http_version: 
+  recorded_at: Thu, 23 Jan 2014 20:55:31 GMT
+recorded_with: VCR 2.8.0

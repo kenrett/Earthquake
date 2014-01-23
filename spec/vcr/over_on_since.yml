@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://desolate-escarpment-4897.herokuapp.com/earthquakes.json?on=1390348800&over=1.2&since=1390176000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Host:
+      - desolate-escarpment-4897.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 23 Jan 2014 21:05:20 GMT
+      Etag:
+      - '"c2c967959e89d0263541ba9e2b2b46bc"'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.0.0/2013-11-22)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 5f177f4d-26b9-4a46-af4a-3566757c7c3d
+      X-Runtime:
+      - '0.017898'
+      X-Ua-Compatible:
+      - chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1635'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"quake_id":"ak11142212","latitude":61.2927,"longitude":-149.2816,"depth":36.6,"mag":2.0,"magtype":"ml","nst":10,"gap":86,"dmin":0,"rms":0,"net":"ak","quake_date":"2014-01-22T03:19:19.000Z","updated":"2014-01-22T03:26:05.975Z","place":"29km
+        SE of Knik-Fairview, Alaska"},{"quake_id":"nn00435459","latitude":39.4269,"longitude":-119.5646,"depth":9.3643,"mag":1.98,"magtype":"ml","nst":25,"gap":124,"dmin":0,"rms":0,"net":"nn","quake_date":"2014-01-22T03:15:46.170Z","updated":"2014-01-22T04:32:46.686Z","place":"14km
+        NNE of Virginia City, Nevada"},{"quake_id":"ci11416394","latitude":33.7778,"longitude":-116.9045,"depth":14.8,"mag":1.5,"magtype":"Ml","nst":37,"gap":54,"dmin":0,"rms":0,"net":"ci","quake_date":"2014-01-22T03:08:58.900Z","updated":"2014-01-22T03:20:26.740Z","place":"3km
+        NNW of Valle Vista, California"},{"quake_id":"ak11142095","latitude":63.3611,"longitude":-148.8259,"depth":50.0,"mag":1.4,"magtype":"ml","nst":5,"gap":161,"dmin":0,"rms":null,"net":"ak","quake_date":"2014-01-22T01:18:51.000Z","updated":"2014-01-22T01:25:21.144Z","place":"7km
+        ESE of Cantwell, Alaska"},{"quake_id":"pr14022000","latitude":18.0457,"longitude":-66.7636,"depth":17.0,"mag":1.7,"magtype":"Md","nst":5,"gap":172,"dmin":0,"rms":0,"net":"pr","quake_date":"2014-01-22T00:44:16.700Z","updated":"2014-01-22T04:35:36.925Z","place":"2km
+        SSW of Santo Domingo, Puerto Rico"},{"quake_id":"nn00435446","latitude":38.563,"longitude":-118.4388,"depth":8.2836,"mag":1.62,"magtype":"ml","nst":12,"gap":92,"dmin":0,"rms":0,"net":"nn","quake_date":"2014-01-22T00:33:07.176Z","updated":"2014-01-22T00:56:47.228Z","place":"16km
+        ENE of Hawthorne, Nevada"}]'
+    http_version: 
+  recorded_at: Thu, 23 Jan 2014 21:05:21 GMT
+recorded_with: VCR 2.8.0

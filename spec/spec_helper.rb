@@ -3,7 +3,6 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
-require 'webmock/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -48,20 +47,19 @@ RSpec.configure do |config|
 end
 
 require 'vcr'
-require 'webmock/rspec'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr'
-  c.hook_into :typhoeus
+  c.hook_into :webmock
   c.configure_rspec_metadata!
   c.allow_http_connections_when_no_cassette = false
 end
 
-RSpec.configure do |c|
-  c.around(:each) do |example|
-    VCR.use_cassette(example.metadata[:full_description]) do
-      example.run
-    end
-  end
-end
+# RSpec.configure do |c|
+#   c.around(:each) do |example|
+#     VCR.use_cassette(example.metadata[:full_description]) do
+#       example.run
+#     end
+#   end
+# end
 
