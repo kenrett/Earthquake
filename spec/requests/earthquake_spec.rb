@@ -76,7 +76,6 @@ describe "Earthquakes" do
   end
 
   context 'with bad parameters' do
-      pending
 
     it "should fail correctly" do
       pending

@@ -1,5 +1,4 @@
 time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,type
-2014-01-23T21:02:15.970Z,39.0157,-118.3755,7,1.57,ml,9,131,0.238,0.11,nn,nn00435714,2014-01-23T21:04:18.491Z,"42km WNW of Gabbs, Nevada",earthquake
 2014-01-23T20:52:44.700Z,38.8435,-122.81,0,1.1,Md,,50.4,0.01796631,0.08,nc,nc72145490,2014-01-23T20:54:24.356Z,"7km WNW of Cobb, California",earthquake
 2014-01-23T20:20:06.000Z,60.3069,-141.2084,0.2,2.2,ml,12,190.799984736001,0.6602617,0.73,ak,ak11143568,2014-01-23T20:27:01.398Z,"72km ENE of Cape Yakataga, Alaska",earthquake
 2014-01-23T20:08:49.050Z,34.3385,-116.8513333,0.01,1.27,ml,6,102,0.02192,0.03,ci,ci11416922,2014-01-23T20:20:27.909Z,"8km N of Big Bear City, California",quarry_blast
@@ -1702,6 +1701,3 @@ time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,
 2014-01-16T21:29:36.000Z,63.649,-149.5033,100,1.6,ml,7,154.799987616001,0.2632064,0.41,ak,ak11137839,2014-01-16T21:32:23.076Z,"35km SW of Healy, Alaska",earthquake
 2014-01-16T21:28:47.000Z,61.7348,-149.9936,38.8,1.9,ml,12,61.1999951040004,0.432988,0.53,ak,ak11137837,2014-01-16T21:37:18.852Z,"2km ESE of Willow, Alaska",earthquake
 2014-01-16T21:26:04.800Z,19.0991,-66.708,49,2.6,Md,3,295.2,0.74919495,0.33,pr,pr14016077,2014-01-18T02:42:20.228Z,"68km N of Hatillo, Puerto Rico",earthquake
-2014-01-16T21:23:17.560Z,36.103,-117.903,5.82,0.09,ml,8,251,0.04168,0.09,ci,ci11414626,2014-01-16T21:38:46.294Z,"51km N of Inyokern, California",earthquake
-2014-01-16T21:18:52.620Z,35.6103333,-118.31,4.64,1.77,ml,33,38,0.09121,0.11,ci,ci11414618,2014-01-16T21:46:52.320Z,"6km SSW of Weldon, California",earthquake
-2014-01-16T21:12:15.900Z,47.9478,-121.5443,0,1.2,Md,,248.4,0.20661252,0.14,uw,uw60671852,2014-01-16T22:25:53.623Z,"15km NE of Gold Bar, Washington",quarry
